@@ -1,9 +1,12 @@
 import os
 import streamlit as st
 import google.generativeai as genai
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Set your Google Generative AI API key
-genai.configure(api_key="AIzaSyCB3eGaCYtBEYznObWrDvZkJmbSi1c5N30")  # Replace "YOUR_API_KEY" with your actual API key
+genai.configure(api_key=os.getenv("API_KEY"))  # Replace "YOUR_API_KEY" with your actual API key
 
 # Model setup
 generation_config = {
